@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option go_package = "example.com/cache-service/cache";
+
+package cacheservice;
+
+
+service CacheService {
+  // Function to set a key-value pair in cache
+  rpc Set(CacheEntry) returns (Empty) {}
+
+  // Function to retrieve a value based on a key from cache
+  rpc Get(Key) returns (Value) {} 
+} 
+
+message Key {
+  string key = 1;
+}
+
+message Value {
+  bytes value = 1;
+}
+
+message CacheEntry {
+  Key key = 1;
+  Value val = 2;
+}
+
+message Empty {} 	
