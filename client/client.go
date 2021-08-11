@@ -48,7 +48,7 @@ func main() {
 		log.Printf("An error has been encountered: %v",err)
 	}
 
-	key := &pb.Key{Key: "Bello"}
+	key := &pb.Key{Key: "Hello"}
 	val, err := client.Get(context.Background(), key)
 	if err != nil {
 		log.Fatalf("An error has occurred while fetching: %v",err)
