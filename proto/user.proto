@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "example.com/cache-service/proto";
+
+package userservice;
+
+service UserService {
+  // Function to set User in Cache
+  rpc SetUser(User) returns (Empty) {}
+
+  // Function to get User(s) based on name and rollno
+  rpc GetUser(UserKey) returns (stream User) {}
+}
+
+message UserKey {
+  string name   = 1;
+  int64 rollnum = 2;
+}
+
+message User {
+  string name    = 1;
+  string class   = 2;
+  int64 rollnum  = 3;
+  bytes metadata = 4;
+}
+
+message Empty {}
