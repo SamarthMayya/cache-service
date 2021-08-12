@@ -1,1 +1,1 @@
-redis-server ../redis.conf
+redis-server redis.conf

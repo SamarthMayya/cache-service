@@ -7,8 +7,8 @@ import (
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
-        "google.golang.org/grpc/examples/data"
-	pb "example.com/cache-service/cache"
+	"google.golang.org/grpc/examples/data"
+	pb "example.com/cache-service/z_generated/cache"
 )
 
 var (
